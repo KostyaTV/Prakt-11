@@ -1,0 +1,40 @@
+n = int(input("Введите число: "))
+
+tsifri_3 = 0
+posledniye_tsifri = 0
+chotniye_tsifri = 0
+bolshe_5 = 0
+bolshe_7 = 1
+tsifri_0_i_5 = 0
+
+poslednyaya_tsifra = n % 10
+
+while n > 0:
+    tsifra = n % 10
+
+    if tsifra == 3:
+        tsifri_3 += 1
+
+    if tsifra == poslednyaya_tsifra:
+        posledniye_tsifri += 1
+
+    if tsifra % 2 == 0:
+        chotniye_tsifri += 1
+
+    if tsifra > 5:
+        bolshe_5 += tsifra
+
+    if tsifra > 7:
+        bolshe_7 *= tsifra
+
+    if tsifra == 0 or tsifra == 5:
+        tsifri_0_i_5 += 1
+
+    n //= 10
+
+print(f"Количество цифр 3: {tsifri_3}")
+print(f"Количество цифр, равных последней цифре: {posledniye_tsifri}")
+print(f"Количество чётных цифр: {chotniye_tsifri}")
+print(f"Количество цифр больше 5-и: {bolshe_5}")
+print(f"Произведение цифр больше 7-и: {bolshe_7}")
+print(f"Количество цифр 0 и 5: {tsifri_0_i_5}")
