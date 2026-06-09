@@ -1,0 +1,23 @@
+dvoynyashki = {}
+
+for a in range(1, 151):
+    for b in range(a, 151):
+        s = a ** 5 + b ** 5
+        dvoynyashki[s] = (a, b)
+
+for c in range(1, 151):
+    for d in range(c, 151):
+        s2 = c ** 5 + d ** 5
+        for e in range(1, 151):
+            nuzhno = e ** 5 - s2
+            if nuzhno in dvoynyashki:
+                a, b = dvoynyashki[nuzhno]
+                print(f"a = {a}; b = {b}; c = {c}; d = {d}; e = {e}")
+                print(f"a + b + c + d + e = {a + b + c + d + e}")
+                break
+        else:
+            continue
+        break
+    else:
+        continue
+    break
